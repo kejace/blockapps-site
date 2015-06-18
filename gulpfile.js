@@ -1,7 +1,11 @@
 var gulp = require('gulp'),     
-    sass = require('gulp-ruby-sass') 
-    notify = require("gulp-notify") 
-    bower = require('gulp-bower');
+    sass = require('gulp-ruby-sass') ,
+    notify = require("gulp-notify") ,
+    bower = require('gulp-bower'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    notify = require('gulp-notify'),
+    rename = require('gulp-rename');
 
 var config = {
      sassPath: './resources/sass',
@@ -16,6 +20,25 @@ gulp.task('bower', function() { 
 gulp.task('icons', function() { 
     return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*') 
         .pipe(gulp.dest('./public/fonts')); 
+});
+
+gulp.task('images', function() { 
+    return gulp.src('./resources/img/**.*') 
+        .pipe(gulp.dest('./public/img')); 
+});
+
+// uglify task
+gulp.task('js', function() {
+	gulp.src([
+		config.bowerDir + '/jquery/dist/jquery.js',
+		config.bowerDir + '/bootstrap/dist/js/bootstrap.js',
+		])
+		.pipe(concat('app.js'))
+		.pipe(gulp.dest('./public/js'))
+		.pipe(uglify())
+		.pipe(rename('app.min.js'))
+		.pipe(uglify())
+        .pipe(gulp.dest('./public/js'))
 });
 
 gulp.task('sass', function() { 
@@ -36,9 +59,13 @@ gulp.task('sass', function() { 
 
 // Rerun the task when a file changes
  gulp.task('watch', function() {
-     gulp.watch(config.sassPath + '/**/*.scss', ['css']); 
-});
+     gulp.watch(config.sassPath + '/**/*.scss', ['sass']); 
 
-gulp.task('default', ['bower', 'icons', 'sass']);
+	gulp.watch('./resources/js/**/*.js', function() {
+			gulp.run('js');
+		});
+	});
+
+gulp.task('default', ['bower', 'icons', 'js', 'images', 'sass']);
 
 

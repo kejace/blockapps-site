@@ -5,12 +5,123 @@ $font-family-base: 'Raleway', sans-serif;
 // Import bootstrap and fontawesome
 @import "bootstrap";
 @import "font-awesome";
+@import "colors";
 
 // Bootstrap Starter Template Styles
 body {
   padding-top: 50px;
+  background-color: $yellow;
+  color: $blue-dark;
 }
 .starter-template {
   padding: 40px 15px;
   text-align: center;
 }
+
+h1, h2, h3, h4, h5, h6 {
+	text-transform: uppercase;
+}
+
+.navbar-default {
+	background-color: transparent;
+ 	border-color: transparent;
+
+ 	.navbar-nav>li>a {
+ 		color: $blue-dark;
+ 	}
+
+ 	.navbar-nav>.active>a,
+ 	.navbar-nav>.active>a:hover,
+ 	.navbar-nav>.active>a:focus {
+ 		color: $blue-dark;
+ 		background-color: transparent;
+ 		font-weight: 700;
+ 	}
+
+ 	.navbar-toggle {
+ 		border-color: $blue-dark;
+
+ 		.icon-bar {
+ 			background-color: $blue-dark;
+ 		}
+ 		&:hover {
+	 		border-color: $blue-dark;
+	 		background-color: $blue-dark;
+
+	 		.icon-bar {
+	 			background-color: $white;
+	 		}
+	 	}
+	 	&:focus {
+	 		background-color: $turquoise;
+	 	}
+ 	}
+
+ 	@media (max-width: $screen-xs-max) {
+
+	 	#navbar.collapse.navbar-collapse, 
+	 	#navbar.collapsing.navbar-collapse {
+	 		background-color: $blue-dark;
+	 		color: $yellow;
+	 		border-color: $blue-dark;
+
+	 		.navbar-nav>li>a {
+		 		color: $yellow;
+		 	}
+
+		 	.navbar-nav>.active>a,
+		 	.navbar-nav>li>a:hover,
+		 	.navbar-nav>li>a:focus {
+		 		color: $red;
+		 	}
+		 	.navbar-nav>li>a:hover,
+		 	.navbar-nav>li>a:focus {
+		 		color: $turquoise;
+		 	}
+	 	}
+	}
+
+}
+
+// logo div
+
+.logo-section {
+	margin-bottom: 50px;
+}
+.logo {
+	background-image: url(../img/logo.png);
+	height: 214px;
+	width: 268px;
+	margin: 0 auto;
+
+	@media
+	  only screen and (-webkit-min-device-pixel-ratio: 2),
+	  only screen and (   min--moz-device-pixel-ratio: 2),
+	  only screen and (     -o-min-device-pixel-ratio: 2/1),
+	  only screen and (        min-device-pixel-ratio: 2),
+	  only screen and (                min-resolution: 192dpi),
+	  only screen and (                min-resolution: 2dppx) {
+	  	background-image: url(../img/logo@2x.png);
+	  	background-size: 268px 214px;
+	  }
+}
+
+// red div
+.red-section {
+	background-color: $red;
+	color: $blue-dark;
+	text-align: center;
+	padding: 30px 0;
+
+	h2 {
+		color: $white;
+		font-weight: 600;
+		max-width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	h5 {
+		font-weight: 700;
+	}
+}
+
