@@ -59,7 +59,7 @@ gulp.task('sass', function() { 
 
 // Rerun the task when a file changes
  gulp.task('watch', function() {
-     gulp.watch(config.sassPath + '/**/*.scss', ['sass']); 
+     gulp.watch(config.sassPath + '/**/*.scss', ['images', 'sass']); 
 
 	gulp.watch('./resources/js/**/*.js', function() {
 			gulp.run('js');
