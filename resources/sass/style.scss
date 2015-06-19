@@ -27,6 +27,10 @@ h1, h2, h3, h4, h5, h6 {
 h2 {
 	margin-bottom: 1em;
 	line-height: 1.5em;
+
+	@media (max-width: $screen-xs-max) {
+		font-size: 1.7em;
+	}
 }
 h5 {
 	font-weight: 700;
@@ -298,10 +302,15 @@ h5 {
 	}
 
 	.circle-feature-info {
+		width: 20em;
+		text-align: center;
+		margin: 0 auto;
 		p {
 			color: $turquoise;
 			font-weight: 600;
-			font-size: 1.2em;
+			font-size: 1em;
+			margin-bottom: 3em;
+			line-height: 1.5em;
 		}
 	}
 }
@@ -313,6 +322,10 @@ h5 {
 		font-size: 1.5em;
 		font-weight: 600;
 		width: 90%;
+
+		@media (max-width: $screen-sm-max) {
+			margin-left: 5%;
+		}
 	}
 	.button-get-started {
 		margin-top: 20px;
@@ -320,6 +333,10 @@ h5 {
 		@include image-2x("../img/button-get-started@2x.png", 179px, 45px);
 		width: 179px;
 		height: 45px;
+
+		@media (max-width: $screen-sm-max) {
+			margin: 20px auto;
+		}
 	}
 
 	.magic-wand {
@@ -336,12 +353,21 @@ h5 {
 
 	h2 {
 		color: $white;
+
+		@media (max-width: $screen-sm-max) {
+			text-align: center;
+		}
 	}
 	p.description {
 		line-height: 1.5em;
 		font-size: 1.5em;
 		font-weight: 600;
 		width: 90%;
+
+		@media (max-width: $screen-sm-max) {
+			margin-left: 5%;
+			width: 100%;
+		}
 	}
 	.coming-soon {
 		background: transparent url(../img/coming-soon.png) no-repeat 50% 50%;
@@ -349,6 +375,10 @@ h5 {
 		width: 348px;
 		height: 111px;
 		margin-top: 50px;
+
+		@media (max-width: $screen-sm-max) {
+			margin: 30px auto 0;
+		}
 	}
 }
 
