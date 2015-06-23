@@ -59,7 +59,7 @@
     <div class="container-fluid section blue-section">
       <div class="row">
         <div class="col-md-12">
-          <h2>What is Ethereum</br>and Bitcoin 2.0?</h2>
+          <h2>What is Ethereum</br>and Bitcoin <span class="number">2.0</span>?</h2>
         </div>
       </div>
       <div class="row">
@@ -148,23 +148,24 @@
     </div>
 
     <div class="container-fluid section try-section">
-     <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-        <h2 class="white">Try a tutorial using BlockApps</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-2">
-        <div class="text-left">
-          <p class="description">Building apps on top of BlockApps is easy. In fact, BlockApps does most of the work for you, providing all the information you need to query and display information about an Ethereum account.</p>
-          <a type="link" href="#tutorial"><div class="button-get-started"></div></a>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+          <h2 class="white">Try a tutorial using<br/>BlockApps</h2>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="magic-wand pull-right"></div>
+      <div class="row">
+        <div class="magic-wand-blocks"></div>
+        <div class="magic-wand"></div>
+        <div class="col-md-5 col-md-offset-1">
+          <div class="text-left">
+            <p class="description">Building apps on top of BlockApps is easy. In fact, BlockApps does most of the work for you, providing all the information you need to query and display information about an Ethereum account.</p>
+            <a type="link" href="#tutorial"><div class="button-get-started"></div></a>
+          </div>
+        </div>
       </div>
     </div>
-    </div>
+
+    <div class="clear"></div>
 
     <div class="container-fluid section turquoise-section">
       <div class="row">
@@ -182,17 +183,86 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <a name="signup"></a>
-          <h2>Sign up for BlockApps Updates</h2>
-            <form>
-              <div class="form-group">
-                <input type="email" class="form-control" id="email-signup" placeholder="Your Email">
-                <button type="button" class="button-sign-up"></button>
+          <div id="mc_embed_signup">
+            <h2>Sign up for BlockApps Updates</h2>
+            <form action="//consensys.us11.list-manage.com/subscribe/post?u=947c9b18fc27e0b00fc2ad055&amp;id=ea03b67182" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div class="form-group" class="mc-field-group">
+                <input type="email" name="EMAIL" value="" class="form-control email" id="mce-EMAIL" placeholder="Your Email">
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_947c9b18fc27e0b00fc2ad055_ea03b67182" tabindex="-1" value=""></div>
+                <button type="submit" id="mc-embedded-subscribe" name="subscribe" class="button-sign-up"></button>
               </div>
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div> 
             </form>
+          </div>
         </div>
       </div>
     </div>
 
+    <footer class="container-fluid section footer-section">
+      <div class="footer-top container">
+        <div class="row">
+          <div class="widget col-xs-12 col-sm-4">
+            <h4 class="widget-title">Site Map</h4>
+            <ul class="entries links links-2-cols">
+              <li><a href="#">API Docs</a></li>
+              <li><a href="#">API Explorer</a></li>
+              <li><a href="#">Tutorials</a></li>
+            </ul>
+          </div><!--/.col-3-->
+          <div class="clearfix visible-xs"></div>
+          <div class="widget col-xs-6 col-sm-2">
+            <h4 class="widget-title">Info</h4>
+            <ul class="entries links links">
+              <li><a href="#">About</a></li>
+              <li><a href="https://angel.co/consensys/jobs">Careers</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+          </div><!--/.col-3-->
+          <div class="widget col-xs-6 col-sm-2">
+            <h4 class="widget-title">Follow Us</h4>
+            <ul class="entries links">
+              <li><a href="https://www.facebook.com/consensussystems"><i class="fa fa-facebook-square fa-2x"></i> Facebook</a></li>
+              <li><a href="https://twitter.com/blockapps"><i class="fa fa-twitter-square fa-2x"></i> Twitter</a></li>
+              <li><a href="https://www.linkedin.com/company/consensus-systems-consensys-"><i class="fa fa-linkedin-square fa-2x"></i> Linkedin</a></li>
+            </ul>
+          </div><!--/.col-3-->
+          <div class="clearfix visible-xs"></div>
+          <div class="widget col-xs-12 col-sm-4">
+            <h4 class="widget-title">Contact</h4>
+            <p>We'd love to hear from you!</p>
+            <p><div id="blockapps-email"></div></p>
+            <p><a href="https://twitter.com/blockapps">@blockapps</a></p>
+          </div><!--/.col-3-->
+        </div><!--row.-->
+      </div>
+      <div class="row">
+        <div class="col-md-12 copyright">
+          <p>Copyright &copy; 2015 by <a href="http://consensys.net">ConsenSys, LLC</a>. All Rights Reserved.</p>
+          <p>Design by <a href="">Bogdan Burcea.</a></p>
+        </div>
+      </div>
+    </footer>
+
     <script src="js/app.min.js"></script>
+
+    <!-- MC -->
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+    <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);
+    </script>
+
+    <!-- GA -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-64394910-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </body>
 </html>
