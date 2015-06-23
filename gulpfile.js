@@ -32,9 +32,10 @@ gulp.task('js', function() {
 	gulp.src([
 		config.bowerDir + '/jquery/dist/jquery.js',
 		config.bowerDir + '/bootstrap/dist/js/bootstrap.js',
+        './resources/js/app.js'
 		])
 		.pipe(concat('app.js'))
-		.pipe(gulp.dest('./public/js'))
+		.pipe(gulp.dest('./tmp'))
 		.pipe(uglify())
 		.pipe(rename('app.min.js'))
 		.pipe(uglify())
@@ -59,7 +60,7 @@ gulp.task('sass', function() { 
 
 // Rerun the task when a file changes
  gulp.task('watch', function() {
-     gulp.watch(config.sassPath + '/**/*.scss', ['images', 'sass']); 
+     gulp.watch(config.sassPath + '/**/*.scss', ['js', 'images', 'sass']); 
 
 	gulp.watch('./resources/js/**/*.js', function() {
 			gulp.run('js');

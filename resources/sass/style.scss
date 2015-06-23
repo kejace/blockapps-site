@@ -57,6 +57,10 @@ h5 {
 	font-size: 1.2em;
 }
 
+.clear {
+	clear:both;
+}
+
 .navbar-default {
 	background-color: transparent;
  	border-color: transparent;
@@ -330,12 +334,14 @@ h5 {
 			@include image-2x("../img/what-is-bottom-internet@2x.png", 805px, 120px);
 			width: 805px;
 			height: 120px;
+			margin-bottom: 80px;
 
 			@media (max-width: $screen-xs-max) {
 				background: transparent url(../img/what-is-bottom-internet@half.png) no-repeat 50% 50%;
 				@include image-2x("../img/what-is-bottom-internet.png", 322px, 48px);
 				width: 322px;
 				height: 48px;
+				margin-bottom: 25px;
 			}
 		}
 
@@ -512,11 +518,19 @@ h5 {
 
 // try div
 .try-section {
+	margin-bottom: 67px;
+	margin-top: 0;
+	padding-top: 0;
+
+	h2.white {
+		z-index: 10;
+	}
+
 	p.description {
 		line-height: 1.5em;
 		font-size: 1.5em;
 		font-weight: 600;
-		width: 90%;
+		max-width: 422px;
 
 		@media (max-width: $screen-sm-max) {
 			margin-left: 5%;
@@ -535,10 +549,27 @@ h5 {
 	}
 
 	.magic-wand {
+		position: absolute;
+		margin-top: 80px;
+		margin-left: 570px;
+		z-index: -1;
+		width: 516px;
+		height: 291px;
 		background: transparent url(../img/magic-wand.png) no-repeat 50% 50%;
-		@include image-2x("../img/magic-wand@2x.png", 542px, 341px);
-		width: 542px;
-		height: 341px;
+		@include image-2x("../img/magic-wand@2x.png", 516px, 291px);
+	}
+
+	.magic-wand-blocks {
+		margin-top: -140px;
+		margin-left: 240px;
+		overflow-x: hidden;
+		background-clip: border-box;
+		position: absolute;
+		z-index: 1;
+		width: 722px;
+		height: 498px;
+		background: transparent url(../img/magic-wand-blocks.png) no-repeat 0% 0%;
+		@include image-2x("../img/magic-wand-blocks@2x.png", 722px, 498px);
 	}
 }
 
@@ -548,6 +579,7 @@ h5 {
 
 	h2 {
 		color: $white;
+		margin-bottom: 5px;
 
 		@media (max-width: $screen-sm-max) {
 			text-align: center;
@@ -572,6 +604,10 @@ h5 {
 		margin-top: 50px;
 
 		@media (max-width: $screen-sm-max) {
+			background: transparent url(../img/coming-soon@half.png) no-repeat 50% 50%;
+			@include image-2x("../img/coming-soon.png", 176px, 56px);
+			width: 176px;
+			height: 56px;
 			margin: 30px auto 0;
 		}
 	}
@@ -584,8 +620,8 @@ h5 {
 		color: $blue-dark;
 	}
 
-	#email-signup {
-		width: 350px;
+	#mce-EMAIL {
+		width: 300px;
 		height: 34px;
 		color: $blue-dark;
 		font-weight: 600;
@@ -599,7 +635,7 @@ h5 {
 		}
 
 		@media (max-width: $screen-sm-max) {
-			width: 230px;
+			width: 200px;
 		}
 	}
 
@@ -607,5 +643,82 @@ h5 {
 		vertical-align: middle;
 		margin-top: -1px;
 		margin-left: -10px;
+	}
+
+	#mce-responses {
+		padding: 10px;
+		max-width: 550px;
+		margin: 0 auto;
+
+		.response {
+			font-weight: 600;
+			font-size: 1.5em;
+			display: inline-block;
+
+			&#mce-error-response {
+				color: $red;
+			}
+			&#mce-success-response {
+				color: $blue-dark;
+			}
+		}
+	}
+}
+
+.footer-section, .footer-section a {
+	background-color: $blue-dark;
+	color: lighten($blue, 15%);
+	text-align: left;
+	line-spacing: 1.5em;
+
+	a:hover, a:focus {
+		text-decoration: none;
+		color: lighten($turquoise, 10%);
+	}
+
+	ul {
+		padding: 0px;
+		margin: 0px;
+		list-style-type: none;
+	}
+
+	.widget-title {
+		font-size: 1.2em;
+		text-transform: uppercase;
+		padding-bottom: 15px;
+		font-weight: 300;
+		border-bottom: 1px solid $blue;
+	}
+
+	.copyright {
+		margin-top: 30px;
+		text-align: center;
+	}
+
+	#blockapps_email a {
+		letter-spacing: 1px;
+	}
+
+	.links {
+		.links-2-cols {
+			&:before, &:after {
+				display: table;
+				line-height: 0;
+				content: "";
+			}
+			li {
+				width: 48%;
+				float: left;
+				margin-right: 4%;
+			}
+		}
+		li {
+			margin-bottom: 6px;
+
+			a>i.fa {
+				vertical-align: middle;
+  				margin-right: 5px;
+			}
+		}
 	}
 }
