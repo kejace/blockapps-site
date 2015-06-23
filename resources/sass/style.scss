@@ -69,6 +69,10 @@ h5 {
  		color: $blue-dark;
  		text-shadow: 1px 1px 0 $yellow;
 
+ 		@media (max-width: $screen-sm) {
+ 			text-shadow: none;
+ 		}
+
  		&:hover, &:focus {
  			color: $turquoise;
  		}
