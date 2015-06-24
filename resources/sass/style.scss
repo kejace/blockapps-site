@@ -8,6 +8,11 @@ $font-family-base: 'Raleway', sans-serif;
 @import "colors";
 @import "mixins";
 
+html, body {
+	max-width: 100%;
+    overflow-x: hidden;
+}
+
 // Bootstrap Starter Template Styles
 body {
 	padding-top: 50px;
@@ -525,47 +530,55 @@ h5 {
 	margin-bottom: 67px;
 	margin-top: 0;
 	padding-top: 0;
+	padding-bottom: 20px;
 
 	h2.white {
 		z-index: 10;
 	}
 
 	p.description {
+		text-align: left;
 		line-height: 1.5em;
 		font-size: 1.5em;
 		font-weight: 600;
 		max-width: 422px;
+		margin: 0 auto 10px;
 
 		@media (max-width: $screen-sm-max) {
 			margin-left: 5%;
 		}
 	}
 	.button-get-started {
-		margin-top: 20px;
+		margin: 20px auto;
 		background: transparent url(../img/button-get-started.png) no-repeat 50% 50%;
 		@include image-2x("../img/button-get-started@2x.png", 179px, 45px);
 		width: 179px;
 		height: 45px;
 
 		@media (max-width: $screen-sm-max) {
-			margin: 20px auto;
+			margin-left: 5%;
 		}
 	}
 
 	.magic-wand {
 		position: absolute;
 		margin-top: 80px;
-		margin-left: 570px;
+		margin-left: 60%;
 		z-index: -1;
 		width: 516px;
 		height: 291px;
 		background: transparent url(../img/magic-wand.png) no-repeat 50% 50%;
 		@include image-2x("../img/magic-wand@2x.png", 516px, 291px);
+
+		@media (max-width: $screen-sm-max) {
+			margin-top: 120px;
+			margin-left: 60%;
+		}
 	}
 
 	.magic-wand-blocks {
 		margin-top: -140px;
-		margin-left: 240px;
+		margin-left: 40%;
 		overflow-x: hidden;
 		background-clip: border-box;
 		position: absolute;
@@ -574,6 +587,10 @@ h5 {
 		height: 498px;
 		background: transparent url(../img/magic-wand-blocks.png) no-repeat 0% 0%;
 		@include image-2x("../img/magic-wand-blocks@2x.png", 722px, 498px);
+
+		@media (max-width: $screen-sm-max) {
+			margin-left: 25%;
+		}
 	}
 }
 
@@ -605,7 +622,7 @@ h5 {
 		@include image-2x("../img/coming-soon@2x.png", 348px, 111px);
 		width: 348px;
 		height: 111px;
-		margin-top: 50px;
+		margin: 50px auto;
 
 		@media (max-width: $screen-sm-max) {
 			background: transparent url(../img/coming-soon@half.png) no-repeat 50% 50%;

@@ -6,6 +6,7 @@ var gulp = require('gulp'), 
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     rename = require('gulp-rename');
+    connect = require('gulp-connect');
 
 var config = {
      sassPath: './resources/sass',
@@ -55,18 +56,26 @@ gulp.task('sass', function() { 
          .on("error", notify.onError(function (error) {
                  return "Error: " + error.message;
              })) 
-         .pipe(gulp.dest('./public/css')); 
+         .pipe(gulp.dest('./public/css'))
+	 	.pipe(connect.reload());
+});
+
+gulp.task('connect', function() {
+	connect.server({
+		root: 'public',
+		port: 8000,
+		livereload: true
+	});
 });
 
 // Rerun the task when a file changes
  gulp.task('watch', function() {
-     gulp.watch(config.sassPath + '/**/*.scss', ['js', 'images', 'sass']); 
+     gulp.watch(config.sassPath + '/**/*.scss', ['js', 'images', 'sass']);
 
 	gulp.watch('./resources/js/**/*.js', function() {
 			gulp.run('js');
 		});
 	});
 
-gulp.task('default', ['bower', 'icons', 'js', 'images', 'sass']);
-
+gulp.task('default', ['bower', 'icons', 'js', 'images', 'sass', 'connect', 'watch']);
 
